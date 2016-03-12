@@ -1,13 +1,10 @@
 import config from '../config';
 import React from 'react';
+import Message from './Message';
 
 
 function renderMessage(value, key) {
-    return (
-        <li key={key}>
-            {value}
-        </li>
-    );
+    return <Message text={value.text} author={value.author} timestamp={value.timestamp} key={key} />
 }
 
 class MessageList extends React.Component {
@@ -33,7 +30,7 @@ class MessageList extends React.Component {
     render() {
         var values = this.state.messages.map(renderMessage);
         return (
-            <ul>
+            <ul className="message-list">
                 {values}
             </ul>
         );

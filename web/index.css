@@ -1,0 +1,26 @@
+.message-list {
+    padding-left: 0px;
+}
+
+.message {
+    border: #000000;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 10px;
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.timestamp {
+    font-style: italic;
+}
+
+.tweet-text {
+
+}
+

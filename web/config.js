@@ -1,5 +1,5 @@
 export default {
-    host: 'www.byzantinefailure.com',
-    port: '80',
-    maxMessages: 10
+    host: 'localhost',
+    port: '8080',
+    maxMessages: 15
 };

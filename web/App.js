@@ -1,5 +1,6 @@
 import React from 'react';
 import SocketMessageList from './components/SocketMessageList';
+import config from './config';
 
 /*
 class App extends React.Component {
@@ -23,6 +24,6 @@ App.defaultProps = {
 };
 */
 
-const App = () => <SocketMessageList />;
+const App = () => <SocketMessageList {...config} />;
 export default App;
 
