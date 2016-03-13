@@ -13,7 +13,9 @@
   "dependencies": {
     "express": "~4.13.4",
     "twitter": "~1.2.5",
-    "express-ws": "~1.0.0" 
+    "express-ws": "~1.0.0",
+    "winston": "~2.2.0",
+    "node-uuid": "~1.4.7"
   },
   "devDependencies": {
     "react": "^0.14.7",

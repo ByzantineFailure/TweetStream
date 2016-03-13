@@ -4,9 +4,10 @@ var express = require('express'),
     app = express(),
     socketApp = require('express-ws')(app),
     heartbeat = require('./lib/heartbeat-pinger'),
-    socketHandler = require('./lib/socket-handler');
+    socketHandler = require('./lib/socket-handler'),
+    loggers = require('./lib/logger');
 
-console.log('Starting server...');
+loggers.server.info('Starting server...');
 
 app.use('/', express.static(__dirname + '/build'));
 
@@ -15,5 +16,5 @@ app.ws('/socket', socketHandler);
 
 app.listen(process.env.PORT || 3000);
 
-console.log('Server started!');
+loggers.server.info('Server started!');
 
