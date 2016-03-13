@@ -8,8 +8,8 @@ class Message extends React.Component {
         return (
             <ul className="message">
               <li className="author">{this.props.author}</li>
-              <li className="timestamp">{this.props.timestamp}</li>
               <li className="tweet-text">{this.props.text}</li>
+              <li className="timestamp">{this.props.timestamp}</li>
             </ul>
         );
     }
