@@ -9,7 +9,7 @@
     "make": "rm -f build/* && NODE_ENV=production webpack -p --progress && cp web/index.css build/ && cp web/index.html build/"
   },
   "author": "ByzantineFailure <byzanitnefailure@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "~4.13.4",
     "twitter": "~1.2.5",
