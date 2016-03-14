@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "rm build/* && webpack --progress -d && cp web/index.css build/ && cp web/index.html build/ && PORT=8080 node index.js",
-    "make": "rm build/* && NODE_ENV=production webpack -p --progress && cp web/index.css build/ && cp web/index.html build/"
+    "start": "rm -f build/* && webpack --progress -d && cp web/index.css build/ && cp web/index.html build/ && PORT=8080 node index.js",
+    "make": "rm -f build/* && NODE_ENV=production webpack -p --progress && cp web/index.css build/ && cp web/index.html build/"
   },
   "author": "ByzantineFailure <byzanitnefailure@gmail.com>",
   "license": "ISC",

@@ -1,7 +1,7 @@
 export default {
     socket: {
         host: 'www.byzantinefailure.com',
-        port: '80',
+        port: '9090',
         path: '/socket',
         isSecure: false
     },
