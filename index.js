@@ -1,6 +1,8 @@
 "use strict";
 
 var express = require('express'),
+    fs = require('fs'),
+    https = require('https'),
     app = express(),
     session = require('express-session'),
     socketApp = require('express-ws')(app),
@@ -13,12 +15,20 @@ var express = require('express'),
 
 loggers.server.info('Starting server...');
 
+console.log(process.env.TWITTER_STREAM_PKEY);
+console.log(process.env.TWITTER_STREAM_CERT);
+
+
+const credentials = {
+    key: fs.readFileSync(process.env.TWITTER_STREAM_PKEY, 'utf8'),
+    cert: fs.readFileSync(process.env.TWITTER_STREAM_CERT, 'utf8')
+};
+
 app.use(session({
     secret: process.env.SESSION_SECRET || 'NEATO SECRET',
     resave: false,
     saveUninitialized: true,
-    // Uncomment this once we get a cert and HTTPS up and running.
-    //cookie: { secure: true }
+    cookie: { secure: true }
 }));
 
 // ayy
@@ -43,7 +53,8 @@ app.get('/test_credentials', testCredentials);
 app.ws('/socket', socketHandler);
 //heartbeat(socketApp.getWss('/socket'));
 
-app.listen(process.env.PORT || 3000);
+https.createServer(credentials, app).listen(process.env.PORT || 3000);
+//app.listen(process.env.PORT || 3000);
 
 loggers.server.info(`Listening on port ${process.env.PORT || 3000}`);
 loggers.server.info('Server started!');
