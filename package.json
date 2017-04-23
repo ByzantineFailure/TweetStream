@@ -12,10 +12,12 @@
   "license": "MIT",
   "dependencies": {
     "express": "~4.13.4",
-    "twitter": "~1.2.5",
+    "express-session": "^1.15.2",
     "express-ws": "~1.0.0",
-    "winston": "~2.2.0",
-    "node-uuid": "~1.4.7"
+    "node-uuid": "~1.4.7",
+    "oauth": "^0.9.15",
+    "twitter": "~1.2.5",
+    "winston": "~2.2.0"
   },
   "devDependencies": {
     "react": "^0.14.7",

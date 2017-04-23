@@ -7,7 +7,7 @@ module.exports = {
   devtool: "cheap-module-source-map",
   devServer: {
     inline: true,
-    port: 8080,
+    port: 7777,
     host: "0.0.0.0"
   },
   module: {
