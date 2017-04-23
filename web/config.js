@@ -3,7 +3,7 @@ export default {
         host: 'www.byzantinefailure.com',
         port: '9090',
         path: '/socket',
-        isSecure: false
+        isSecure: true
     },
     defaultFilter: 'javascript',
     maxMessages: 15
