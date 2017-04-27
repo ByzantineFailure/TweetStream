@@ -2,7 +2,7 @@
 
 var express = require('express'),
     fs = require('fs'),
-    https = require('https'),
+    http = require('http'),
     app = express(),
     session = require('express-session'),
     heartbeat = require('./lib/heartbeat-pinger'),
@@ -13,11 +13,6 @@ var express = require('express'),
     loggers = require('./lib/logger');
 
 loggers.server.info('Starting server...');
-
-const credentials = {
-    key: fs.readFileSync(process.env.TWITTER_STREAM_PKEY, 'utf8'),
-    cert: fs.readFileSync(process.env.TWITTER_STREAM_CERT, 'utf8')
-};
 
 app.use(session({
     secret: process.env.SESSION_SECRET || 'NEATO SECRET',
@@ -45,7 +40,7 @@ app.get('/request_token', auth.getRequestToken);
 app.get('/access_token', auth.getAccessToken);
 app.get('/test_credentials', testCredentials);
 
-const server = https.createServer(credentials, app),
+const server = http.createServer(app),
     socketApp = require('express-ws')(app, server);
 
 app.ws('/socket', socketHandler);
