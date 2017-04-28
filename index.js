@@ -18,7 +18,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET || 'NEATO SECRET',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    //cookie: { secure: true }
 }));
 
 // ayy
@@ -26,7 +26,7 @@ app.get('/', function(req, res) {
     if (!req.session.oAuthAccessToken || ! req.session.oAuthAccessTokenSecret) {
         res.redirect(302, '/request_token');
     } else {
-        res.redirect(302, '/static');
+        res.redirect(302, '/static/');
     }
 });
 
