@@ -1,8 +1,9 @@
 export default {
     socket: {
         host: 'www.byzantinefailure.com',
-        port: '9090',
-        path: '/socket',
+        port: '',
+        // We run this behind HAProxy now, so the path is prefixed with '/twitterstream'
+        path: '/twitterstream/socket',
         isSecure: true
     },
     defaultFilter: 'javascript',
